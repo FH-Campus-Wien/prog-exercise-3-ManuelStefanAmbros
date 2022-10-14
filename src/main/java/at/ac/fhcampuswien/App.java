@@ -56,7 +56,6 @@ public class App {
                 else{
                     System.out.println("The number AI picked is higher than your guess.");}
                 guessCounter ++;
-
             }
         }
     }
@@ -68,7 +67,6 @@ public class App {
     // Implement all methods as public static
 
     public static void main(String[] args) {
-        guessingGame(10);
 
         // test your method implementations here
         // make method calls
