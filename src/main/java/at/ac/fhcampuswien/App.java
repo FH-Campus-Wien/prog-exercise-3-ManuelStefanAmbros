@@ -26,6 +26,16 @@ public class App {
         }
     }
 
+    static long lcg(long input){
+        int m = 2;
+        int c = 12345;
+        int a = 1103515245;
+        for(int i = 1; i < 31; i++)
+            m *= 2;
+        return (input * a + c) % m;
+
+    }
+
     // Implement all methods as public static
 
     public static void main(String[] args) {
