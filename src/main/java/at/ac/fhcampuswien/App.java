@@ -33,12 +33,42 @@ public class App {
         for(int i = 1; i < 31; i++)
             m *= 2;
         return (input * a + c) % m;
+    }
 
+    static void guessingGame(int numberToGuess){
+        int numberAI = randomNumberBetweenOneAndHundred();
+        int guessCounter = 1;
+        int userGuess = -1;
+        Scanner numberUser = new Scanner(System.in);
+
+        for(int i = 1; i <= 10; i++){
+            System.out.print("Guess number " + guessCounter + ": ");
+            userGuess = numberUser.nextInt();
+            if (userGuess == numberAI){
+                System.out.println("You won wisenheimer!");
+                return;}
+            else{
+                if(guessCounter == 10){
+                    System.out.println("You lost! Have you ever heard of divide & conquer?");
+                    return;}
+                if(userGuess > numberAI){
+                    System.out.println("The number AI picked is lower than your guess.");}
+                else{
+                    System.out.println("The number AI picked is higher than your guess.");}
+                guessCounter ++;
+
+            }
+        }
+    }
+    static int randomNumberBetweenOneAndHundred(){
+        Random number = new Random();
+        return number.nextInt(100);
     }
 
     // Implement all methods as public static
 
     public static void main(String[] args) {
+        guessingGame(10);
 
         // test your method implementations here
         // make method calls
