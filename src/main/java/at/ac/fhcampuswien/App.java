@@ -43,7 +43,7 @@ public class App {
 
     public static void guessingGame(int numberToGuess){
         int guessCounter = 1;
-        int userGuess = -1;
+        int userGuess;
         Scanner numberUser = new Scanner(System.in);
 
         for(int i = 1; i <= 10; i++){
@@ -70,7 +70,7 @@ public class App {
     }
     public static boolean swapArrays(int [] array1, int [] array2){
         if (array1.length == array2.length){
-            int variable = 0;
+            int variable;
             for(int i = 0; i < array1.length; i++){
                 variable = array1[i];
                 array1[i] = array2[i];
@@ -78,6 +78,28 @@ public class App {
             return true;}
         else{
             return false;}
+    }
+    public static String camelCase(String input){
+        char[] charArray = input.toCharArray();
+        StringBuilder inputOutput = new StringBuilder();
+
+        if(charArray[0] >= 97 && charArray[0] <= 122)
+            charArray[0] -= 32;
+
+        for(int i = 1; i < charArray.length; i++){
+            if(charArray[i] >= 65 && charArray[i] <= 90){
+                charArray[i] += 32;}
+            else if(charArray[i] == 32){
+                i++;
+                if(charArray[i] >= 97 && charArray[i] <= 122){
+                    charArray[i] -= 32;}
+            }
+        }
+        for(char j : charArray){
+            if(j >= 65 && j <= 90 || j >= 97 && j <= 122)
+                inputOutput.append(j);
+        }
+        return inputOutput.toString();
     }
 
     // Implement all methods as public static
