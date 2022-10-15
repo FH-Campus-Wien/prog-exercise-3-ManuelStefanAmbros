@@ -101,6 +101,21 @@ public class App {
         }
         return inputOutput.toString();
     }
+    public static int checkDigit (int[] input){
+        int sum = 0;
+        int controlDigit;
+        for(int i = 0; i < input.length; i++){
+            input[i] = input[i] * (i + 2);
+            sum += input[i];
+        }
+        controlDigit = 11 - (sum % 11);
+        if(controlDigit == 10)
+            controlDigit = 0;
+        else if(controlDigit == 11)
+            controlDigit = 5;
+
+        return controlDigit;
+    }
 
     // Implement all methods as public static
 
